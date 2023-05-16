@@ -6,10 +6,37 @@ const { DataTypes } = Sequelize;
 const Book = db.define(
   "book",
   {
+    uuid: {
+      type: DataTypes.STRING,
+      defaultValue: DataTypes.UUIDV4,
+      allowNull: false,
+      validate: {
+        notEmpty: true,
+      },
+    },
+
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: true,
+      },
+    },
+    link: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: true,
+      },
+    },
+    preview: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: true,
+      },
+    },
     image: DataTypes.STRING,
-    name: DataTypes.STRING,
-    preview: DataTypes.STRING,
-    link: DataTypes.STRING,
     url: DataTypes.STRING,
   },
   {
